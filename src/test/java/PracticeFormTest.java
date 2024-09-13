@@ -2,8 +2,6 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -13,7 +11,6 @@ public class PracticeFormTest {
     static void testBase() {
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com/";
-//        Configuration.pageLoadStrategy = "eager";
     }
 
     @Test
@@ -43,8 +40,8 @@ public class PracticeFormTest {
              text("Bony Skye"),             // Проверка имени
              text("Bony@test.com"),         // Проверка email
              text("Male"),                  // Проверка пола
-             text("9659112131"),           // Проверка телефона
-             text("07 October,1991"),     // Проверка даты рождения
+             text("9659112131"),            // Проверка телефона
+             text("07 October,1991"),       // Проверка даты рождения
              text("Maths"),                 // Проверка предметов
              text("Sports"),                // Проверка хобби
              text("One-Punch Man.jpg"),     // Проверка загруженной картинки
