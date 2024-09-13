@@ -31,8 +31,7 @@ public class PracticeFormTest {
         $("#subjectsInput").click();
         $("#subjectsInput").setValue("Maths").pressEnter();
         $("label[for='hobbies-checkbox-1']").click();
-        File file = new File("src/test/resources/One-Punch Man.jpg");
-        $("#uploadPicture").uploadFile(file);
+        $("#uploadPicture").uploadFromClasspath("One-Punch Man.jpg");
         $("#currentAddress").setValue("Street 1");
         $("#react-select-3-input").setValue("NCR").pressEnter();
         $("#react-select-4-input").setValue("Delhi").pressEnter();
