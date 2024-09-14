@@ -24,8 +24,10 @@ public class PracticeFormTest {
         $("#genterWrapper").$(byText("Male")).click();
         $("#userNumber").setValue("9659112131");
         $("#dateOfBirthInput").click();
-        $(".react-datepicker__year-select").$("option[value='1991']").click();
-        $(".react-datepicker__month-select").$("option[value='9']").click();
+        $(".react-datepicker__year-select").click();
+        $$(".react-datepicker__year-select option").findBy(text("1991")).click();
+        $(".react-datepicker__month-select").click();
+        $$(".react-datepicker__month-select option").findBy(text("October")).click();
         $(".react-datepicker__day--007:not(.react-datepicker__day--outside-month)").click();
         $("#subjectsInput").click();
         $("#subjectsInput").setValue("Maths").pressEnter();
