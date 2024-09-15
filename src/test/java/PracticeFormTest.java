@@ -40,18 +40,17 @@ public class PracticeFormTest {
         $(Selectors.byText("Delhi")).click();
         $("#submit").click();
 
-        $(".table-responsive").shouldHave(
-             text("Bony Skye"),             // Проверка имени
-             text("Bony@test.com"),         // Проверка email
-             text("Male"),                  // Проверка пола
-             text("9659112131"),            // Проверка телефона
-             text("07 October,1991"),       // Проверка даты рождения
-             text("Maths"),                 // Проверка предметов
-             text("Reading"),                // Проверка хобби
-             text("One-Punch Man.jpg"),     // Проверка загруженной картинки
-             text("Street 1"),              // Проверка адреса
-             text("NCR Delhi")              // Проверка штата и города
-        );
+
+        $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text("Bony Skye"));
+        $(".table-responsive").$(byText("Student Email")).parent().shouldHave(text("Bony@test.com"));
+        $(".table-responsive").$(byText("Gender")).parent().shouldHave(text("Male"));
+        $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text("9659112131"));
+        $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text("07 October,1991"));
+        $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text("Maths"));
+        $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text("Reading"));
+        $(".table-responsive").$(byText("Picture")).parent().shouldHave(text("One-Punch Man.jpg"));
+        $(".table-responsive").$(byText("Address")).parent().shouldHave(text("Street 1"));
+        $(".table-responsive").$(byText("State and City")).parent().shouldHave(text("NCR Delhi"));
     }
 
 }
