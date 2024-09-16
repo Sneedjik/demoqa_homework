@@ -1,5 +1,4 @@
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selectors;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -13,6 +12,7 @@ public class PracticeFormTest {
     static void testBase() {
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com/";
+        Configuration.pageLoadStrategy = "eager";
     }
 
     @Test
@@ -34,10 +34,8 @@ public class PracticeFormTest {
         $("#hobbiesWrapper").$(byText("Reading")).click();
         $("#uploadPicture").uploadFromClasspath("One-Punch Man.jpg");
         $("#currentAddress").setValue("Street 1");
-        $("#state").click();
-        $(Selectors.byText("NCR")).click();
-        $("#city").click();
-        $(Selectors.byText("Delhi")).click();
+        $("#react-select-3-input").setValue("NCR").pressEnter();
+        $("#react-select-4-input").setValue("Delhi").pressEnter();
         $("#submit").click();
 
 
